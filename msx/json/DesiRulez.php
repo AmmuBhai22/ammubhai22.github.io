@@ -1,13 +1,4 @@
-<?php
-
-
-
-header('Access-Control-Allow-Origin: *');
-
-header('Access-Control-Allow-Headers: Origin, Content-Type, Accept');
-header('Access-Control-Allow-Methods: GET, OPTIONS');
-header('Content-Type: application/json; charset=utf-8');
-echo '{
+{
    "type": "list",
    "background": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN0XPtGXDLoqnu-6lyb1AQHhAqdm_2fkb6Ew&usqp=CAU",
    "transparent": 2,
@@ -53,4 +44,4 @@ echo '{
          ]
       }
    ]
-}';
+}
