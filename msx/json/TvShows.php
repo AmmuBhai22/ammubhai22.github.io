@@ -15,7 +15,8 @@
                "imageFiller": "cover",
                "imageOverlay": 0,
                "alignment": "title-center",
-               "action": "content:https://ammubhai22-github-io.pages.dev/msx/json/YoDesi.php"
+               "action":
+               "content:https://ammubhai22-github-io.pages.dev/msx/json/YoDesi.json"
             },
             {
                "type": "seperate",
@@ -27,7 +28,8 @@
                "alignment": "title-center",
                "imageFiller": "cover",
                "imageOverlay": 0,
-               "action": "content:https://ammubhai22-github-io.pages.dev/msx/json/DesiRulez.php"
+               "action":
+               "content:https://ammubhai22-github-io.pages.dev/msx/json/DesiRulez.json"
             },
             {
                "type": "seperate",
@@ -39,7 +41,8 @@
                "alignment": "title-center",
                "imageFiller": "cover",
                "imageOverlay": 0,
-               "action": "content:https://ammubhai22-github-io.pages.dev/msx/json/ZiddiDil.php"
+               "action":
+               "content:https://ammubhai22-github-io.pages.dev/msx/json/ZiddiDil.json"
             }
          ]
       }
