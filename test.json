@@ -1,0 +1,45 @@
+{
+   "type": "list",
+   "headline": "Interaction Plugin Test",
+   "template": {
+      "type": "separate",
+      "layout": "0,0,2,4",
+      "icon": "msx-white-soft:gamepad",
+      "color": "msx-glass"
+   },
+   "items": [
+      {
+         "title": "Template",
+         "action": "interaction:load:http://msx.benzac.de/interaction/template.html"
+      },
+      {
+         "title": "Search Example",
+         "action":
+         "content:request:interaction:init@http://192.168.2.15:8080/msx/search2.html?url=https://ammubhai.000webhostapp.com/YT/You.php?type=search&param=query&seperator=%26"
+      },
+      {
+         "title": "Settings Example",
+         "action": "content:request:interaction:init@http://192.168.2.15:8080/msx/search.html"
+      },
+      {
+         "title": "Observer Example",
+         "action": "content:request:interaction:init@http://msx.benzac.de/interaction/observer.html"
+      },
+      {
+         "enumerate": false,
+         "type": "button",
+         "offset": "0,0,0,-1",
+         "icon": "refresh",
+         "label": "Reload",
+         "action": "interaction:reload"
+      },
+      {
+         "enumerate": false,
+         "type": "button",
+         "offset": "0,0,0,-1",
+         "icon": "highlight-off",
+         "label": "Unload",
+         "action": "interaction:unload"
+      }
+   ]
+}
