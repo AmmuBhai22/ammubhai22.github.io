@@ -4,7 +4,7 @@
    "options": {
       "headline": "Options",
       "caption": "opt/menu{tb}{ico:msx-red:stop} opt1",
-      "background": "http://phpkrotest.000webhostapp.com/msx/Backgrounds/Black.jpeg",
+      "background": "https://ammubhai22-github-io.pages.dev/images/Black.jpeg",
       "transparent": 2,
       "template": {
          "enumerate": false,
@@ -29,43 +29,44 @@
                "layout": "0,2,3,4",
                "key": "1",
                "title": "TV SHOWS",
-               "image": "http://phpkrotest.000webhostapp.com/msx/Backgrounds/Tv.jpg",
+               "image": "https://ammubhai22-github-io.pages.dev/images/Tv.jpg",
                "color": "msx-black",
                "imageFiller": "cover",
                "imageOverlay": 0,
                "alignment": "title-center",
-               "action": "content:http://phpkrotest.000webhostapp.com/msx/Json/NewLayout/TvShows.json"
+               "action": "content:https://ammubhai22-github-io.pages.dev/json/TvShows.json"
             },
             {
                "type": "seperate",
                "layout": "3,2,3,4",
                "title": "KIDS",
                "key": "2",
-               "image": "http://phpkrotest.000webhostapp.com/msx/Backgrounds/Cartoons.jpg",
+               "image": "https://ammubhai22-github-io.pages.dev/images/Cartoons.jpg",
                "color": "msx-black",
                "alignment": "title-center",
                "imageFiller": "cover",
                "imageOverlay": 0,
-               "action": "content:http://phpkrotest.000webhostapp.com/msx/Json/NewLayout/Kids.php"
+               "action":
+               "content:https://ammubhai22-github-io.pages.dev/json/Kids.json"
             },
             {
                "type": "seperate",
                "layout": "6,2,3,4",
                "title": "Movies",
                "key": "3",
-               "image": "http://phpkrotest.000webhostapp.com/msx/Backgrounds/Movies2.jpg",
+               "image": "https://ammubhai22-github-io.pages.dev/images/Movies2.jpg",
                "color": "msx-black",
                "alignment": "title-center",
                "imageFiller": "cover",
                "imageOverlay": 0,
-               "action": "content:http://phpkrotest.000webhostapp.com/msx/Json/NewLayout/Movies.json"
+               "action": "content:https://ammubhai22-github-io.pages.dev/json/Movies.json"
             },
             {
                "type": "seperate",
                "layout": "9,2,3,4",
                "title": "YouTube",
                "key": "4",
-               "image": "http://phpkrotest.000webhostapp.com/msx/Backgrounds/Yt.png",
+               "image": "https://ammubhai22-github-io.pages.dev/images/Yt.png",
                "color": "msx-black",
                "alignment": "title-center",
                "imageFiller": "cover",
@@ -79,7 +80,7 @@
                "key": "6",
                "color": "msx-black",
                "alignment": "title-center",
-               "action": "content:http://phpkrotest.000webhostapp.com/msx/Json/NewLayout/JTV.json"
+               "action": "content:https://ammubhai22-github-io.pages.dev/json/JTV.json"
             },
             {
                "type": "teaser",
