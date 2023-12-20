@@ -10,23 +10,13 @@
                "layout": "0,2,3,4",
                "title": "HindiLinks4u{br}Server 1",
                "key":"1",
-               "image": "http://phpkrotest.000webhostapp.com/msx/Backgrounds/S1.jpg",
+               "image": "https://ammubhai22-github-io.pages.dev/msx/images/S1.jpg",
                "color": "msx-black",
                "imageFiller": "cover",
                "imageOverlay": 0,
                "alignment": "title-center",
-               "action": "content:http://phpkrotest.000webhostapp.com/msx/Json/NewLayout/HLinks4U.php"
-            },{
-               "type": "seperate",
-               "layout": "4,2,3,4",
-               "title": "The Movie DB",
-               "key":"1",
-               "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3T3nZYwW3G-6Aw13GuD5k3qCDCxETbMj-HA&usqp=CAU",
-               "color": "msx-black",
-               "imageFiller": "cover",
-               "imageOverlay": 0,
-               "alignment": "title-center",
-               "action": "menu:http://tmdb.msx.benzac.de/msx/service.php"
+               "action":
+               "content:https://ammubhai22-github-io.pages.dev/msx/json/HLinks4U.json"
             }
          ]
       }
