@@ -1,0 +1,55 @@
+<?php
+
+
+
+header('Access-Control-Allow-Origin: *');
+
+header('Access-Control-Allow-Headers: Origin, Content-Type, Accept');
+header('Access-Control-Allow-Methods: GET, OPTIONS');
+header('Content-Type: application/json; charset=utf-8');
+echo '{
+   "type": "list",
+   "background": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN0XPtGXDLoqnu-6lyb1AQHhAqdm_2fkb6Ew&usqp=CAU",
+   "transparent": 2,
+   "pages": [
+      {
+         "items": [
+            {
+               "type": "teaser",
+               "layout": "0,2,3,4",
+               "title": "Language",
+               "color": "msx-black",
+               "alignment": "title-center",
+               "key": "1",
+               "action": "content:https://jtv.piyushadlakha.repl.co/msx/Language.json"
+            },
+            {
+               "type": "teaser",
+               "layout": "3,2,3,4",
+               "title": "Genres",
+               "color": "msx-black",
+               "key": "2",
+               "alignment": "title-center",
+               "action": "content:https://jtv.piyushadlakha.repl.co/msx/Genre.json"
+            },{
+               "type": "teaser",
+               "layout": "6,2,3,4",
+               "title": "Language [S2]",
+               "color": "msx-black",
+               "alignment": "title-center",
+               "key": "1",
+               "action": "content:https://jtv.piyushadlakha.repl.co/msx2/Language.json"
+            },
+            {
+               "type": "teaser",
+               "layout": "9,2,3,4",
+               "title": "Genres [S2]",
+               "color": "msx-black",
+               "key": "2",
+               "alignment": "title-center",
+               "action": "content:https://jtv.piyushadlakha.repl.co/msx2/Genre.json"
+            }
+         ]
+      }
+   ]
+}';
