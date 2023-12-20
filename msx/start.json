@@ -1,0 +1,5 @@
+{
+  "name": "MSXPlayer v3",
+  "version": "3.3.0",
+  "parameter": "content:http://phpkrotest.000webhostapp.com/msx/Json/NewLayout/main.json"
+}
