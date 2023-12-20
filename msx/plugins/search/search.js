@@ -63,36 +63,35 @@ var createControlButton = function(control, key, x, y) {
     };
 };
 var inputPage = {
-    headline: "SEARCH",
+    headline: null,
     offset: "0,0,0,0.5",
-    
-      items: [
-        createInputButton("Q", "q", 0, 0),
-        createInputButton("W", "w", 1, 0),
-        createInputButton("E", "e", 2, 0),
-        createInputButton("R", "r", 3, 0),
-        createInputButton("T", "t", 4, 0),
-        createInputButton("Y", "y", 5, 0),
-        createInputButton("U", "u", 6, 0),
-        createInputButton("I", "i", 7, 0),
-        createInputButton("O", "o", 8, 0),
-        createInputButton("P", "p", 9, 0),
-        createInputButton("A", "a", 10, 0),
-        createInputButton("S", "s", 11, 0),
-        createInputButton("D", "d", 0, 1),
-        createInputButton("F", "f", 1, 1),
-        createInputButton("G", "g", 2, 1),
-        createInputButton("H", "h", 3, 1),
-        createInputButton("J", "j", 4, 1),
-        createInputButton("K", "k", 5, 1),
-        createInputButton("L", "l", 6, 1),
-        createInputButton("Z", "z", 7, 1),
-        createInputButton("X", "x", 8, 1),
-        createInputButton("C", "c", 9, 1),
-        createInputButton("V", "v", 10, 1),
-        createInputButton("B", "b", 11, 1),
-        createInputButton("N", "n", 0, 2),
-        createInputButton("M", "m", 1, 2),
+    items: [
+        createInputButton("A", "a", 0, 0),
+        createInputButton("B", "b", 1, 0),
+        createInputButton("C", "c", 2, 0),
+        createInputButton("D", "d", 3, 0),
+        createInputButton("E", "e", 4, 0),
+        createInputButton("F", "f", 5, 0),
+        createInputButton("G", "g", 6, 0),
+        createInputButton("H", "h", 7, 0),
+        createInputButton("I", "i", 8, 0),
+        createInputButton("J", "j", 9, 0),
+        createInputButton("K", "k", 10, 0),
+        createInputButton("L", "l", 11, 0),
+        createInputButton("M", "m", 0, 1),
+        createInputButton("N", "n", 1, 1),
+        createInputButton("O", "o", 2, 1),
+        createInputButton("P", "p", 3, 1),
+        createInputButton("Q", "q", 4, 1),
+        createInputButton("R", "r", 5, 1),
+        createInputButton("S", "s", 6, 1),
+        createInputButton("T", "t", 7, 1),
+        createInputButton("U", "u", 8, 1),
+        createInputButton("V", "v", 9, 1),
+        createInputButton("W", "w", 10, 1),
+        createInputButton("X", "x", 11, 1),
+        createInputButton("Y", "y", 0, 2),
+        createInputButton("Z", "z", 1, 2),
         createInputButton("1", "1", 2, 2),
         createInputButton("2", "2", 3, 2),
         createInputButton("3", "3", 4, 2),
@@ -108,7 +107,6 @@ var inputPage = {
         createControlButton("space", "space|insert", 6, 3),
         createControlButton("done", "yellow", 9, 3),
     ]
-    
 };
 var search = {
     cache: false,
@@ -129,7 +127,7 @@ function SearchHandler() {
     var createPages = function(items, filterCallback, itemCallback, pageCallback) {
         var x = 0;
         var y = 0;
-        var w = 4;
+        var w = 1;
         var h = 1;
         var page = null;
         var index = 0;
@@ -140,13 +138,30 @@ function SearchHandler() {
                 if (filterCallback(item)) {
                     var pageItem = {
                         enumerate: true,
-                        type: "button",
+                        type: "default",
                         layout: x + "," + y + "," + w + "," + h,
                         color: "msx-glass",
                         iconSize: "small",
-                        title: item.icon,
-                        action: "content:https://ammubhai.000webhostapp.com/YT/You.php?type=search&query="+item.icon,
-                        
+                        icon: item.icon,
+                        action: "panel:data",
+                        data: {
+                            pages: [
+                                {
+                                    items: [
+                                        {
+                                            type: "default",
+                                            layout: "2,1,4,4",
+                                            offset: "0,0,0,-0.33",
+                                            color: "msx-glass",
+                                            iconSize: "large",
+                                            label: item.icon,
+                                            icon: item.icon,
+                                            action: "back"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
                     };
                     itemCallback(item, pageItem, index);
                     if (page == null) {
@@ -206,7 +221,7 @@ function SearchHandler() {
                         }
                     }
                 }
-              //  hit=0;
+                hit=0;
                 return hit == searchToken.length;
             }, function(resultItem, pageItem, index) {
                 resultItems.push(resultItem);
@@ -230,7 +245,7 @@ function SearchHandler() {
             if (testItems != null && testItems.length > 0) {
                 callback();
             } else {
-                TVXServices.ajax.get("https://amantester.000webhostapp.com/YT_NEW/searchSuggestions.php",
+                TVXServices.ajax.get("icons.json",
                 {
                     success: function(data) {
                         testItems = data;
