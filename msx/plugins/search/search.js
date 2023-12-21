@@ -242,9 +242,6 @@ function SearchHandler() {
     var setupTestItems = function(callback) {
         //Load icons
         if (typeof callback == "function") {
-            if (testItems != null && testItems.length > 0) {
-                callback();
-            } else {
                 TVXServices.ajax.get("icons.json",
                 {
                     success: function(data) {
@@ -259,7 +256,6 @@ function SearchHandler() {
                         callback();
                     }
                 });
-            }
         }
     };
     this.init = function() {
