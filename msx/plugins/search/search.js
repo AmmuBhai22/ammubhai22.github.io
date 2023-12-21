@@ -242,7 +242,7 @@ function SearchHandler() {
             if (testItems != null && testItems.length > 0) {
                 callback();
             } else {
-                TVXServices.ajax.get("https://amantester.000webhostapp.com/YT_NEW/searchSuggestions.php?q="+searchInput,
+                TVXServices.ajax.get("http://ammubhai.serv00.net/searchSuggestions.php?q="+searchInput,
                 {
                     success: function(data) {
                         testItems = data;
