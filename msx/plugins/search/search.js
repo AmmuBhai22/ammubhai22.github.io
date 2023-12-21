@@ -242,7 +242,7 @@ function SearchHandler() {
     var setupTestItems = function(callback) {
         //Load icons
         if (typeof callback == "function") {
-                TVXServices.ajax.get("http://amantester.000webhostapp.com/YT_NEW/searchSuggestions.php?q="+searchInput,
+                TVXServices.ajax.get("https://amantester.000webhostapp.com/YT_NEW/searchSuggestions.php?q="+searchInput,
                 {
                     success: function(data) {
                         testItems = data;
