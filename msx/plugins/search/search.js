@@ -291,6 +291,7 @@ function SearchHandler() {
                 		if (url==null){
                 			url="http://search.ammubhai99.serv00.net/msx";
                 		}
+                		/*
                 		fetch("http://search.ammubhai99.serv00.net/search",{
                 			method:"POST",
                 			body:"Search="+searchInput.replace(" ","+"),
@@ -298,9 +299,11 @@ function SearchHandler() {
                 				'Content-Type': 'application/x-www-form-urlencoded'
                 			},
                 		})
+                		*/
                 		var contentUrl=url+seperator+param+"=";
                 		TVXInteractionPlugin.executeAction("content:"+contentUrl+searchInput);
-                		TVXInteractionPlugin.executeAction("interaction:unload");
+                		TVXInteractionPlugin.executeAction("execute:http://search.ammubhai99.serv00.net/add?query="+searchInput)
+                		//TVXInteractionPlugin.executeAction("interaction:unload");
                 	}else{
                     handleSearchControl(searchAction.substr(8));
                     reloadSearch();
