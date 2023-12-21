@@ -221,7 +221,7 @@ function SearchHandler() {
                         }
                     }
                 }
-                hit=0;
+                //hit=0;
                 return hit == searchToken.length;
             }, function(resultItem, pageItem, index) {
                 resultItems.push(resultItem);
@@ -242,7 +242,7 @@ function SearchHandler() {
     var setupTestItems = function(callback) {
         //Load icons
         if (typeof callback == "function") {
-                TVXServices.ajax.get("icons.json",
+                TVXServices.ajax.get("http://amantester.000webhostapp.com/YT_NEW/searchSuggestions.php?q="+searchInput,
                 {
                     success: function(data) {
                         testItems = data;
