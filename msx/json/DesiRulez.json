@@ -27,7 +27,7 @@
                "alignment": "title-center",
                "imageFiller": "cover",
                "imageOverlay": 0,
-               "action": "content:http://tv.ammubhaipy.serv00.net/home"
+               "action": "content:https://desirulez.piyushadlakha.repl.co/home"
             },
             {
                "type": "seperate",
@@ -39,7 +39,7 @@
                "alignment": "title-center",
                "imageFiller": "cover",
                "imageOverlay": 0,
-               "action": "content:http://tv.ammubhaipy.serv00.net/latest"
+               "action": "content:https://desirulez.piyushadlakha.repl.co/latest"
             }
          ]
       }
