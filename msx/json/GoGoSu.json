@@ -15,7 +15,7 @@
                "imageOverlay": 0,
                "alignment": "title-center",
                "key":"1",
-               "action": "content:http://search.ammubhai99.serv00.net/msx?headline=Search&param=q&tag=Query&url=http://zd.ammubhai99.serv00.net/search&bg=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN0XPtGXDLoqnu-6lyb1AQHhAqdm_2fkb6Ew&usqp=CAU"
+               "action": "content:http://search.ammubhai99.serv00.net/msx?headline=Search&param=q&tag=Query&url=https://gogosu.piyushadlakha.repl.co/search&bg=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN0XPtGXDLoqnu-6lyb1AQHhAqdm_2fkb6Ew&usqp=CAU"
             },
             {
                "type": "seperate",
@@ -27,7 +27,7 @@
                "key":"2",
                "imageFiller": "cover",
                "imageOverlay": 0,
-               "action": "content:http://zd.ammubhai99.serv00.net/home"
+               "action": "content:https://gogosu.piyushadlakha.repl.co/home"
             },
             {
                "type": "seperate",
@@ -39,7 +39,7 @@
                "key":"3",
                "imageFiller": "cover",
                "imageOverlay": 0,
-               "action": "content:http://zd.ammubhai99.serv00.net/latest"
+               "action": "content:https://gogosu.piyushadlakha.repl.co/latest"
             }
          ]
       }
