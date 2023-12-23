@@ -43,6 +43,19 @@
                "imageOverlay": 0,
                "action":
                "content:https://ammubhai22-github-io.pages.dev/msx/json/ZiddiDil.json"
+            },
+            {
+               "type": "seperate",
+               "layout": "8,2,3,4",
+               "title": "GoGoSu{br}Server 4",
+               "key":"4",
+               "image": "https://ammubhai22-github-io.pages.dev/msx/images/S3.jpg",
+               "color": "msx-black",
+               "alignment": "title-center",
+               "imageFiller": "cover",
+               "imageOverlay": 0,
+               "action":
+               "content:https://ammubhai22-github-io.pages.dev/msx/json/GoGoSu.json"
             }
          ]
       }
