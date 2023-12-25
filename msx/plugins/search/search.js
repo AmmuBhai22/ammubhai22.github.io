@@ -157,7 +157,7 @@ function SearchHandler() {
                         iconSize: "small",
                         title: item.icon,
                         action:
-                        "[content:"+contentUrl+item.icon+"|execute:http://search.ammubhai99.serv00.net/add?query="+item.icon.replace(" ","%20")+"]",
+                        "[content:"+contentUrl+item.icon+"|execute:http://search.ammubhai99.serv00.net/add?query="+item.icon+"]",
                     };
                     itemCallback(item, pageItem, index);
                     if (page == null) {
@@ -242,7 +242,7 @@ function SearchHandler() {
             if (testItems != null && testItems.length > 0) {
                 callback();
             } else {
-                TVXServices.ajax.get("http://ammubhai.serv00.net/searchSuggestions.php?q="+searchInput,
+                TVXServices.ajax.get("https://amantester.000webhostapp.com/YT_NEW/searchSuggestions.php?q="+searchInput,
                 {
                     success: function(data) {
                         testItems = data;
@@ -302,7 +302,7 @@ function SearchHandler() {
                 		*/
                 		var contentUrl=url+seperator+param+"=";
                 		TVXInteractionPlugin.executeAction("content:"+contentUrl+searchInput);
-                		TVXInteractionPlugin.executeAction("execute:http://search.ammubhai99.serv00.net/add?query="+searchInput.replace(" ","%20"))
+                		TVXInteractionPlugin.executeAction("execute:http://search.ammubhai99.serv00.net/add?query="+searchInput)
                 		//TVXInteractionPlugin.executeAction("interaction:unload");
                 	}else{
                     handleSearchControl(searchAction.substr(8));
