@@ -90,7 +90,7 @@
                "color": "msx-black",
                "alignment": "title-center",
                "action": "content:http://msx.benzac.de/services/m3u.php?headline=SonyLiv&background=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN0XPtGXDLoqnu-6lyb1AQHhAqdm_2fkb6Ew&usqp=CAU&url=http://phpkrotest.000webhostapp.com/msx/Extras/sonyit.m3u&mode=extended&type=video"
-            },
+            }
          ]
       }
    ]
