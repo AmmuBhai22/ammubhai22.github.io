@@ -24,7 +24,7 @@
           "alignment": "title-center",
           "imageFiller": "cover",
           "imageOverlay": 0,
-          "action": "content:http://anm.ammubhai99.serv00.net/search?Query=",
+          "action": "content:https://movieland.piyushadlakha.repl.co/search?q=",
           "title": "Latest"
         }
       ]
