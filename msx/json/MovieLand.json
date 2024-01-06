@@ -14,7 +14,7 @@
           "imageFiller": "cover",
           "imageOverlay": 0,
           "alignment": "title-center",
-          "action": "content:http://search.ammubhai99.serv00.net/msx?headline=MovieLand&tag=Query&param=q&url=https://movieland.piyushadlakha.repl.co/search&bg=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN0XPtGXDLoqnu-6lyb1AQHhAqdm_2fkb6Ew&usqp=CAU"
+          "action": "content:http://search.ammubhai99.serv00.net/msx?headline=MovieLand&tag=Query&param=q&url=http://movieland.ammubhai22.serv00.net/search&bg=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN0XPtGXDLoqnu-6lyb1AQHhAqdm_2fkb6Ew&usqp=CAU"
         },
         {
           "type": "seperate",
@@ -24,7 +24,7 @@
           "alignment": "title-center",
           "imageFiller": "cover",
           "imageOverlay": 0,
-          "action": "content:https://movieland.piyushadlakha.repl.co/search?q=",
+          "action": "content:http://movieland.ammubhai22.serv00.net/search?q=",
           "title": "Latest"
         }
       ]
