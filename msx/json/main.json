@@ -20,7 +20,7 @@
          },
          {
            "label":"TEST NEW MAIN",
-           "action":"window:link:https://ammubhai22-github-io.pages.dev/msx/test/testMainPg"
+           "action":"link:window:https://ammubhai22-github-io.pages.dev/msx/test/testMainPg"
          }
          
       ]
