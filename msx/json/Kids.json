@@ -14,7 +14,7 @@
           "imageFiller": "cover",
           "imageOverlay": 0,
           "alignment": "title-center",
-          "action": "content:https://ammubhai22-github-io.pages.dev/msx/json/Anime.json"
+          "action": "panel:https://ammubhai22-github-io.pages.dev/msx/json/Anime.json"
         }
       ]
     }
