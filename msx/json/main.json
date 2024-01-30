@@ -17,7 +17,12 @@
             "icon": "menu",
             "label": "Old Menu",
             "action": "menu:http://phpkrotest.000webhostapp.com/msx/Nmenu.json"
+         },
+         {
+           "label":"TEST NEW MAIN",
+           "action":"window:link:https://ammubhai22-github-io.pages.dev/msx/test/testMainPg"
          }
+         
       ]
    },
    "transparent": 2,
