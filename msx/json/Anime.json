@@ -14,7 +14,7 @@
           "imageFiller": "cover",
           "imageOverlay": 0,
           "alignment": "title-center",
-          "action": "content:http://search.ammubhai99.serv00.net/msx?headline=Anime%20World%20Data&tag=Query&url=http://anm.ammubhai99.serv00.net/search&bg=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN0XPtGXDLoqnu-6lyb1AQHhAqdm_2fkb6Ew&usqp=CAU"
+          "action": "panel:http://search.ammubhai99.serv00.net/msx?headline=Anime%20World%20Data&tag=Query&url=http://anm.ammubhai99.serv00.net/search&bg=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN0XPtGXDLoqnu-6lyb1AQHhAqdm_2fkb6Ew&usqp=CAU"
         },
         {
           "type": "seperate",
@@ -24,7 +24,7 @@
           "alignment": "title-center",
           "imageFiller": "cover",
           "imageOverlay": 0,
-          "action": "content:http://anm.ammubhai99.serv00.net/search?Query=",
+          "action": "panel:http://anm.ammubhai99.serv00.net/search?Query=",
           "title": "Latest"
         }
       ]
