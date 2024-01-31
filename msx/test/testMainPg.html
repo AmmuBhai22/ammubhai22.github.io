@@ -1,62 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-          
-          
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button Page</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-            height: 100%;
-            margin: 0;
-            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNUdi1LVGwbWhdlfTCkrYcz8mLnP8RC4Gz2w&usqp=CAU') no-repeat center center fixed;
-            background-size: cover;
-            color: white; /* Set text color to white */
-            min-height: 100vh; /* Ensure a minimum height for the content */
-        }
 
-        .button-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            width: 100%;
-            padding: 20px;
-        }
-
-        .button {
-            flex: 1; /* Each button takes equal space */
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .button img {
-            width: 100%; /* Make image width 100% of its container */
-            border-radius: 10px; /* Add border-radius for rounded corners */
-        }
-
-        .button p {
-            background-color: black; /* Set background color to black */
-            width: calc(100% - 20px); /* Adjust width to leave space for margins */
-            padding: 10px;
-            margin: 0;
-            border-radius: 0 0 10px 10px; /* Match the button's border-radius */
-            position: absolute;
-            bottom: 0;
-        }
-
-        @media (max-width: 600px) {
-            .button {
-                width: calc(100% - 40px); /* Adjust width for smaller screens */
-            }
-        }
-    </style>
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,7 +9,8 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #3498db;
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsVUH-fhfSqfEKpL6lOBrcu6363NQ2hwWZv-6iF6Eqyu_SHiPaEuqoQDo&s=10') no-repeat center center fixed;
+            background-size: cover;
             color: white;
             display: flex;
             align-items: center;
@@ -85,40 +30,100 @@
             display: none;
             text-align: center;
         }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .button {
+            flex: 1;
+            margin-bottom: 20px;
+            position: relative;
+            outline: 2px solid transparent;
+        }
+
+        .button img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .button p {
+            background-color: black;
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 0;
+            border-radius: 0 0 10px 10px;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .button:focus {
+            outline: 2px solid white;
+        }
+
+        @media (max-width: 600px) {
+            .button {
+                width: calc(100% - 40px);
+            }
+        }
     </style>
 </head>
+
 <body>
     <div class="splash-screen">
-        <h1>Welcome to My Website!</h1>
+        <h1>NEXT MSX</h1>
     </div>
 
-
-
     <script>
-        // Simulate a splash screen that hides after a few seconds
-        setTimeout(function() {
+        setTimeout(function () {
             document.querySelector('.splash-screen').style.display = 'none';
             document.querySelector('.main-content').style.display = 'block';
         }, 3000); // 3000 milliseconds (3 seconds)
     </script>
-<div class="main-content">
-    <div class="button-container">
-        <div class="button" id=shows >
-            <img src="https://ammubhai22-github-io.pages.dev/msx/images/Tv.jpg" alt="TV Shows">
-            <p>TV SHOWS</p>
+
+    <div class="main-content">
+        <div class="button-container">
+            <div class="button" id=shows onClick="handle('shows');" tabindex="0">
+                <img src="https://ammubhai22-github-io.pages.dev/msx/images/Tv.jpg" alt="TV Shows">
+                <p>TV SHOWS</p>
+            </div>
+            <div class="button" id="kids" onClick="handle('kids');" tabindex="0">
+                <img src="https://ammubhai22-github-io.pages.dev/msx/images/Cartoons.jpg" alt="Kids">
+                <p>KIDS</p>
+            </div>
+            <div class="button" id="movies" onClick="handle('movies');" tabindex="0">
+                <img src="https://ammubhai22-github-io.pages.dev/msx/images/Movies2.jpg" alt="Movies">
+                <p>MOVIES</p>
+            </div>
+            <div class="button" id="yt" onClick="handle('yt');" tabindex="0">
+                <img src="https://ammubhai22-github-io.pages.dev/msx/images/Yt.png" alt="YouTube">
+                <p>YOUTUBE</p>
+            </div>
         </div>
-        <div class="button" id="kids">
-            <img src="https://ammubhai22-github-io.pages.dev/msx/images/Cartoons.jpg" alt="Kids">
-            <p>KIDS</p>
-        </div>
-        <div class="button" id="movie">
-            <img src="https://ammubhai22-github-io.pages.dev/msx/images/Movies2.jpg" alt="Movies">
-            <p>MOVIES</p>
-        </div>
-        <div class="button" id="yt">
-            <img src="https://ammubhai22-github-io.pages.dev/msx/images/Yt.png" alt="YouTube">
-            <p>YOUTUBE</p>
-        </div>
-    </div></div>
+
+        <script>
+            document.addEventListener('keydown', function (event) {
+                const focusedElement = document.activeElement;
+
+                if (focusedElement && focusedElement.classList.contains('button')) {
+                    const buttons = document.querySelectorAll('.button');
+                    const currentIndex = Array.from(buttons).indexOf(focusedElement);
+
+                    if (event.key === 'ArrowRight') {
+                        const nextIndex = (currentIndex + 1) % buttons.length;
+                        buttons[nextIndex].focus();
+                    } else if (event.key === 'ArrowLeft') {
+                        const prevIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+                        buttons[prevIndex].focus();
+                    }
+                }
+            });
+        </script>
+    </div>
 </body>
+
 </html>
