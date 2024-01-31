@@ -83,6 +83,10 @@
             document.querySelector('.splash-screen').style.display = 'none';
             document.querySelector('.main-content').style.display = 'block';
         }, 3000); // 3000 milliseconds (3 seconds)
+      function handle(id){
+          let urlList = {"kids":"https://ammubhai22-github-io.pages.dev/msx/test/testKidsPg.html","movies":"https://ammubhai22-github-io.pages.dev/msx/json/Movies.json","yt":"http://ammubhai.000webhostapp.com/YT/msx.php","shows":"https://ammubhai22-github-io.pages.dev/msx/json/TvShows.json"};
+          window.location.href=urlList[id];
+        }
     </script>
 
     <div class="main-content">
