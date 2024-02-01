@@ -4,46 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HLS.js Fullscreen Example</title>
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-  <style>
-    body, html {
-      margin: 0;
-      height: 100%;
-      overflow: hidden;
-    }
-    #video {
-      width: 100%;
-      height: 100%;
-    }
-  </style>
+  <!-- Fluid Player CSS -->
+  <link rel="stylesheet" href="https://cdn.fluidplayer.com/v3/current/fp.min.css" type="text/css"/>
+
+  <!-- Fluid Player JS -->
+  <script src="https://cdn.fluidplayer.com/v3/current/fp.min.js"></script>
 </head>
 <body>
-  <video id="video"></video>
+  <video id="fluid-player" controls style="width: 100%; height: 100%;">
+    <source src="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" type="application/x-mpegURL">
+    Your browser does not support the video tag.
+  </video>
 
   <script>
-    const videoElement = document.getElementById('video');
-    const hls = new Hls();
-    const videoUrl = 'https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8';
+    // Initialize Fluid Player
+    const fluidPlayerInstance = fluidPlayer(
+      'fluid-player',
+      {
+        layoutControls: {
+          primaryColor: "#000000",
+          posterImage: "", // Optional: Add a poster image URL
+        },
+        vastOptions: {
+          // Optional: Add VAST ad tags if needed
+          adTagUrl: 'YOUR_VAST_AD_TAG_URL',
+        },
+        vastAdvanced: {
+          // Optional: Advanced VAST settings
+        },
+        autoPlay: true, // Set to true if you want autoplay
+        playback: {
+          muted: false, // Set to true for muted autoplay
+        },
+      }
+    );
 
-    if (Hls.isSupported()) {
-      hls.loadSource(videoUrl);
-      hls.attachMedia(videoElement);
-      hls.on(Hls.Events.MANIFEST_PARSED, function () {
-        videoElement.play();
-      });
-
-      document.addEventListener('keydown', function (event) {
-        // Check if the pressed key is "OK" key (you might need to adjust the key code)
-        document.write(event.key)
-        if (event.key === 'Enter') {
-          if (videoElement.paused) {
-            videoElement.play();
-          } else {
-            videoElement.pause();
-          }
-        }
-      });
-    }
+    document.addEventListener('keydown', function (event) {
+      // Check if the pressed key is "OK" key (you might need to adjust the key code)
+      if (event.key === 'Enter') {
+        // Your play/pause logic here
+      }
+    });
   </script>
 </body>
 </html>
