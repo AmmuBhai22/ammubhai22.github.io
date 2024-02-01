@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HLS.js Fullscreen Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <style>
+    body, html {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    #video {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <video id="video"></video>
+
+  <script>
+    const videoElement = document.getElementById('video');
+    const hls = new Hls();
+    const videoUrl = 'https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8';
+
+    if (Hls.isSupported()) {
+      hls.loadSource(videoUrl);
+      hls.attachMedia(videoElement);
+      hls.on(Hls.Events.MANIFEST_PARSED, function () {
+        videoElement.play();
+      });
+
+      document.addEventListener('keydown', function (event) {
+        // Check if the pressed key is "OK" key (you might need to adjust the key code)
+        if (event.key === 'Enter') {
+          if (videoElement.paused) {
+            videoElement.play();
+          } else {
+            videoElement.pause();
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>
