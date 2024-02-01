@@ -34,6 +34,7 @@
 
       document.addEventListener('keydown', function (event) {
         // Check if the pressed key is "OK" key (you might need to adjust the key code)
+        document.write(event.key)
         if (event.key === 'Enter') {
           if (videoElement.paused) {
             videoElement.play();
