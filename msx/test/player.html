@@ -42,6 +42,13 @@
     document.addEventListener('keydown', function (event) {
       // Check if the pressed key is "OK" key (you might need to adjust the key code)
       if (event.key === 'Enter') {
+        var video=document.getElemenyById('fluid-player');
+        if(video.played){
+          video.pause()
+        }
+        else{
+          .play();
+        }
         // Your play/pause logic here
       }
     });
