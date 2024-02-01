@@ -27,7 +27,7 @@
         },
         vastOptions: {
           // Optional: Add VAST ad tags if needed
-          adTagUrl: 'YOUR_VAST_AD_TAG_URL',
+          adTagUrl: '',
         },
         vastAdvanced: {
           // Optional: Advanced VAST settings
@@ -44,10 +44,10 @@
       if (event.key === 'Enter') {
         var video=document.getElemenyById('fluid-player');
         if(video.played){
-          video.pause()
+          video.pause();
         }
         else{
-          .play();
+          video.play();
         }
         // Your play/pause logic here
       }
