@@ -41,7 +41,7 @@
 
     document.addEventListener('keydown', function (event) {
       // Check if the pressed key is "OK" key (you might need to adjust the key code)
-      if (event.key === 'ArrowUp') {
+      if (event.key === 'VK_PLAY' || event.key==="VK_PAUSE" || event.key==="VK_ENTER") {
         const videoElement = document.getElementById('fluid-player');
         if (videoElement.paused) {
           videoElement.play();
