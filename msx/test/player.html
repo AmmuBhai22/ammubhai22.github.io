@@ -1,55 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HLS.js Fullscreen Example</title>
-  <!-- Fluid Player CSS -->
-  <link rel="stylesheet" href="http://cdn.fluidplayer.com/v3/current/fp.min.css" type="text/css"/>
-
-  <!-- Fluid Player JS -->
-  <script src="http://cdn.fluidplayer.com/v3/current/fp.min.js"></script>
-</head>
+<html>
 <body>
-  <video id="fluid-player" controls style="width: 100%; height: 100%;">
-    <source src="http://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" type="application/x-mpegURL">
-    Your browser does not support the video tag.
-  </video>
-
-  <script>
-    // Initialize Fluid Player
-    const fluidPlayerInstance = fluidPlayer(
-      'fluid-player',
-      {
-        layoutControls: {
-          primaryColor: "#000000",
-          posterImage: "", // Optional: Add a poster image URL
-        },
-        vastOptions: {
-          // Optional: Add VAST ad tags if needed
-          adTagUrl: 'YOUR_VAST_AD_TAG_URL',
-        },
-        vastAdvanced: {
-          // Optional: Advanced VAST settings
-        },
-        autoPlay: true, // Set to true if you want autoplay
-        playback: {
-          muted: false, // Set to true for muted autoplay
-        },
-      }
-    );
-
-    document.addEventListener('keydown', function (event) {
-      // Check if the pressed key is "OK" key (you might need to adjust the key code)
-      if (event.key === 'VK_PLAY' || event.key==="VK_PAUSE" || event.key==="VK_ENTER" || event.key==="VK_PLAY_PAUSE") {
-        const videoElement = document.getElementById('fluid-player');
-        if (videoElement.paused) {
-          videoElement.play();
-        } else {
-          videoElement.pause();
-        }
-      }
-    });
-  </script>
+<script>
+document.addEventListener("keydown", function(event) {
+  document.getElementById("x").innerHTML=event.which;
+});
+</script>
+<p id="x">The keycode will appear here...</p>
 </body>
 </html>
