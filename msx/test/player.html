@@ -3,9 +3,13 @@
 <body>
 <script>
 document.addEventListener("keydown", function(event) {
-  document.getElementById("x").innerHTML=event.which;
+  document.getElementById("x").innerHTML="KEYDOWN:- "+event.which;
+});
+document.addEventListener("keypress", function(event) {
+  document.getElementById("y").innerHTML="KEYPRESS:- "+event.which;
 });
 </script>
-<p id="x">The keycode will appear here...</p>
+<p id="x">The keydown keycode will appear here...</p>
+<p id="y">The keypress keycode will appear here...</p>
 </body>
 </html>
