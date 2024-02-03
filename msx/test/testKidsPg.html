@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+<script>
+document.addEventListener("keydown", function(event) {
+  document.getElementById("DOWN").innerHTML="KEYDOWN:- "+event.which;
+});
+document.addEventListener("keypress", function(event) {
+  document.getElementById("PRESS").innerHTML="KEYPRESS:- "+event.which;
+});
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome Page</title>
@@ -78,8 +86,9 @@
 <body><br>
     <div class="button-container">
         <div class="button" id="s1" onClick="handle('s1');" tabindex="0">
-            <img src="https://ammubhai22-github-io.pages.dev/msx/images/S1.jpg" alt="S1">
-           <p>ANIME<br>WORLD</p>
+            <!--img src="https://ammubhai22-github-io.pages.dev/msx/images/S1.jpg" alt="S1"-->
+           <p id="PRESS">PRESSED</p>
+           <p id="DOWN">NOW DOWN</p>
         </div>
         <!-- Add more buttons as needed -->
     </div>
