@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <script>
 document.addEventListener("keydown", function(event) {
   document.getElementById("DOWN").innerHTML="KEYDOWN:- "+event.which;
@@ -92,8 +93,16 @@ document.addEventListener("keypress", function(event) {
         </div>
         <!-- Add more buttons as needed -->
     </div>
-
+<div class=button>
+  <p id="HLS SUPPORT">UNDEF</p>
+  </div>
     <script>
+        if (Hls.isSupported()) {
+          document.getElementById("HLS SUPPORT").innerHtml="YES";
+        }
+        else{
+          document.getElementById("HLS SUPPORT").innerHtml="NO";
+        }
         function handle(id) {
             let urlList = { "s1": "https://ammubhai22-github-io.pages.dev/msx/json/Anime.json" };
             window.location.href = urlList[id];
