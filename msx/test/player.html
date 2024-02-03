@@ -36,26 +36,34 @@
 
     if (Hls.isSupported()) {
       var hls = new Hls();
-      hls.loadSource('http://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8');
+      hls.loadSource('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8');
       hls.attachMedia(video);
       hls.on(Hls.Events.MANIFEST_PARSED, function () {
         video.play();
       });
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      video.src = 'http://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8';
+      video.src = 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8';
       video.addEventListener('canplay', function () {
         video.play();
       });
     }
 
     document.addEventListener('keydown', function (event) {
-      // Check for key code 19 or 415
+      // Check for key code 19 or 415 (Play/Pause)
       if (event.which === 19 || event.which === 415) {
         if (video.paused) {
           video.play();
         } else {
           video.pause();
         }
+      }
+      // Check for key code 412 (Rewind 5 seconds back)
+      else if (event.which === 412) {
+        video.currentTime -= 5;
+      }
+      // Check for key code 417 (Rewind forward 5 seconds)
+      else if (event.which === 417) {
+        video.currentTime += 5;
       }
     });
   </script>
