@@ -1,15 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HLS.js Video Player</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    #video-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
 <body>
-<script>
-document.addEventListener("keydown", function(event) {
-  document.getElementById("x").innerHTML="KEYDOWN:- "+event.which;
-});
-document.addEventListener("keypress", function(event) {
-  document.getElementById("y").innerHTML="KEYPRESS:- "+event.which;
-});
-</script>
-<h1 id="x">The keydown keycode will appear here...</h1>
-<h1 id="y">The keypress keycode will appear here...</h1>
+  <div id="video-container">
+    <video id="video" controls></video>
+  </div>
+  <script>
+    var video = document.getElementById('video');
+
+    if (Hls.isSupported()) {
+      var hls = new Hls();
+      hls.loadSource('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8');
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, function () {
+        video.play();
+      });
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8';
+      video.addEventListener('canplay', function () {
+        video.play();
+      });
+    }
+
+    document.addEventListener('keydown', function (event) {
+      // Check for key code 19 or 415
+      if (event.which === 19 || event.which === 415) {
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      }
+    });
+  </script>
 </body>
 </html>
