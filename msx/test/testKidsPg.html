@@ -5,10 +5,10 @@
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <script>
 if (Hls.isSupported()) {
-  document.getElementById("HLSSUPPORT").innerHTML="YES";
+  document.getElementById("HLS").innerHTML="YES";
 }
  else{
-   document.getElementById("HLSSUPPORT").innerHTML="NO";
+   document.getElementById("HLS").innerHTML="NO";
    
  }
 document.addEventListener("keydown", function(event) {
@@ -101,7 +101,7 @@ document.addEventListener("keypress", function(event) {
         <!-- Add more buttons as needed -->
     </div>
 <div class=button>
-  <p id="HLSSUPPORT">UNDEF</p>
+  <p id="HLS">UNDEF</p>
   </div>
     <script>
         if (Hls.isSupported()) {
