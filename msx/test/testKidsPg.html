@@ -104,12 +104,7 @@ document.addEventListener("keypress", function(event) {
   <p id="HLS">UNDEF</p>
   </div>
     <script>
-        if (Hls.isSupported()) {
-          document.getElementById("HLSSUPPORT").innerHtml="YES";
-        }
-        else{
-          document.getElementById("HLSSUPPORT").innerHtml="NO";
-        }
+        
         function handle(id) {
             let urlList = { "s1": "https://ammubhai22-github-io.pages.dev/msx/json/Anime.json" };
             window.location.href = urlList[id];
