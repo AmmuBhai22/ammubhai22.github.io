@@ -4,6 +4,13 @@
 <head>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <script>
+if (Hls.isSupported()) {
+  document.getElementById("HLSSUPPORT").innerHtml="YES";
+}
+ else{
+   document.getElementById("HLSSUPPORT").innerHtml="NO";
+   
+ }
 document.addEventListener("keydown", function(event) {
   document.getElementById("DOWN").innerHTML="KEYDOWN:- "+event.which;
 });
