@@ -1,72 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HLS.js Video Player</title>
-  <script src="https://ammubhai22-github-io.pages.dev/msx/test/hls.js"></script>
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-    }
-    #video-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    #video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic HLS Video Player</title>
+    <script src="https://ammubhai22-github-io.pages.dev/msx/test/hls.js"></script>
 </head>
 <body>
-  <div id="video-container">
-    <video id="video" controls></video>
-  </div>
-  <script>
-    var video = document.getElementById('video');
+
+<video id="videoPlayer" controls width="600" height="400">
+    Your browser does not support the video tag.
+</video>
+
+<script>
+    var video = document.getElementById('videoPlayer');
+    var hls = new Hls();
+
+    // Replace 'your_file.m3u8' with the actual path or URL of your HLS stream
+    var videoSrc = 'http://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8';
 
     if (Hls.isSupported()) {
-      var hls = new Hls();
-      hls.loadSource('http://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8');
-      hls.attachMedia(video);
-      hls.on(Hls.Events.MANIFEST_PARSED, function () {
-        video.play();
-      });
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+
+        setInterval(function () {
+            // Clear old segments and reload playlist
+            hls.startLevel = 0;
+            hls.loadSource(videoSrc);
+            hls.attachMedia(video);
+        }, 30000);  // Refresh every 30 seconds (adjust as needed)
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      
-      video.src = 'http://playertest.longtailvideo.com/adaptive/captions/playlist.m3u8';
-      video.addEventListener('canplay', function () {
-        video.play();
-      });
+        video.src = videoSrc;
     }
 
-    document.addEventListener('keydown', function (event) {
-      // Check for key code 19 or 415 (Play/Pause)
-      if (event.which === 19 || event.which === 415) {
-        if (video.paused) {
-          video.play();
-        } else {
-          video.pause();
-        }
-      }
-      // Check for key code 412 (Rewind 5 seconds back)
-      else if (event.which === 412) {
-        video.currentTime -= 5;
-      }
-      // Check for key code 417 (Rewind forward 5 seconds)
-      else if (event.which === 417) {
-        video.currentTime += 5;
-      }
-    });
-  </script>
+    video.play();
+</script>
+
 </body>
 </html>
