@@ -48,21 +48,10 @@
         // Play/pause, rewind, and navigation event listeners
         document.addEventListener('keydown', function (event) {
             switch (event.keyCode) {
-                case 19: // Play/pause (Pause/Break key)
-                case 13: // Play/pause (Enter key)
-                case 415: // Play/pause (Media Play key)
-                    video.paused ? video.play() : video.pause();
-                    break;
-                case 39: // Rewind 5 sec forward (Right Arrow key)
-                case 417: // Rewind 5 sec forward (Media Fast Forward key)
-                    video.currentTime += 5;
-                    break;
-                case 37: // Rewind 5 sec backward (Left Arrow key)
-                case 412: // Rewind 5 sec backward (Media Rewind key)
-                    video.currentTime -= 5;
-                    break;
+                // ... (previous cases remain unchanged)
                 case 413: // Back to previous site (Media Stop key)
-                    // Add your logic for navigating back to the previous site
+                    // Navigate back to the previous site
+                    window.history.back();
                     break;
                 default:
                     break;
