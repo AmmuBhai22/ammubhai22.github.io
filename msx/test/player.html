@@ -5,10 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resumable HLS.js Video Player</title>
     <script src="https://ammubhai22-github-io.pages.dev/msx/test/hls.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #videoPlayer {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
 
-<video id="videoPlayer" width="600" height="400" autoplay>
+<video id="videoPlayer" autoplay>
     Your browser does not support the video tag.
 </video>
 
@@ -43,18 +56,6 @@
 
             // Play the video
             video.play();
-
-            // Request fullscreen after video has started playing
-            if (video.requestFullscreen) {
-                video.requestFullscreen();
-            } else if (video.mozRequestFullScreen) {
-                video.mozRequestFullScreen();
-            } else if (video.webkitRequestFullscreen) {
-                video.webkitRequestFullscreen();
-            } else if (video.msRequestFullscreen) {
-                video.msRequestFullscreen();
-            }
-
         }, 5000);
 
         // Play/pause, rewind, and navigation event listeners
@@ -86,13 +87,6 @@
         // Listen to the playing event to hide controls dynamically
         video.addEventListener('playing', function () {
             video.controls = false;
-        });
-
-        // Listen to the fullscreenchange event to hide controls when exiting fullscreen
-        document.addEventListener('fullscreenchange', function () {
-            if (!document.fullscreenElement) {
-                video.controls = false;
-            }
         });
 
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
