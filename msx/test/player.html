@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<video id="videoPlayer" controls width="600" height="400">
+<video id="videoPlayer" width="600" height="400">
     Your browser does not support the video tag.
 </video>
 
@@ -48,9 +48,20 @@
         // Play/pause, rewind, and navigation event listeners
         document.addEventListener('keydown', function (event) {
             switch (event.keyCode) {
-                // ... (previous cases remain unchanged)
+                case 19: // Play/pause (Pause/Break key)
+                case 13: // Play/pause (Enter key)
+                case 415: // Play/pause (Media Play key)
+                    video.paused ? video.play() : video.pause();
+                    break;
+                case 39: // Rewind 5 sec forward (Right Arrow key)
+                case 417: // Rewind 5 sec forward (Media Fast Forward key)
+                    video.currentTime += 5;
+                    break;
+                case 37: // Rewind 5 sec backward (Left Arrow key)
+                case 412: // Rewind 5 sec backward (Media Rewind key)
+                    video.currentTime -= 5;
+                    break;
                 case 413: // Back to previous site (Media Stop key)
-                    // Navigate back to the previous site
                     window.history.back();
                     break;
                 default:
@@ -60,9 +71,19 @@
 
         video.play();
 
+        // Listen to the playing event to hide controls dynamically
+        video.addEventListener('playing', function () {
+            video.controls = false;
+        });
+
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
         video.src = videoSrc;
         video.play();
+
+        // Listen to the playing event to hide controls dynamically
+        video.addEventListener('playing', function () {
+            video.controls = false;
+        });
     }
 </script>
 
