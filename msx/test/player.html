@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<video id="videoPlayer" width="600" height="400">
+<video id="videoPlayer" width="600" height="400" autoplay>
     Your browser does not support the video tag.
 </video>
 
@@ -43,6 +43,18 @@
 
             // Play the video
             video.play();
+
+            // Request fullscreen after video has started playing
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) {
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) {
+                video.msRequestFullscreen();
+            }
+
         }, 5000);
 
         // Play/pause, rewind, and navigation event listeners
@@ -70,8 +82,6 @@
                     break;
             }
         });
-
-        video.play();
 
         // Listen to the playing event to hide controls dynamically
         video.addEventListener('playing', function () {
