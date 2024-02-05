@@ -43,7 +43,7 @@
 
             // Play the video
             video.play();
-        }, 10000);
+        }, 5000);
 
         // Play/pause, rewind, and navigation event listeners
         document.addEventListener('keydown', function (event) {
@@ -56,10 +56,12 @@
                 case 39: // Rewind 5 sec forward (Right Arrow key)
                 case 417: // Rewind 5 sec forward (Media Fast Forward key)
                     video.currentTime += 5;
+                    video.controls = true; // Show controls when rewinding
                     break;
                 case 37: // Rewind 5 sec backward (Left Arrow key)
                 case 412: // Rewind 5 sec backward (Media Rewind key)
                     video.currentTime -= 5;
+                    video.controls = true; // Show controls when rewinding
                     break;
                 case 413: // Back to previous site (Media Stop key)
                     window.history.back();
@@ -74,6 +76,13 @@
         // Listen to the playing event to hide controls dynamically
         video.addEventListener('playing', function () {
             video.controls = false;
+        });
+
+        // Listen to the fullscreenchange event to hide controls when exiting fullscreen
+        document.addEventListener('fullscreenchange', function () {
+            if (!document.fullscreenElement) {
+                video.controls = false;
+            }
         });
 
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
