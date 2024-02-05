@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic HLS Video Player</title>
+    <title>Resumable HLS.js Video Player</title>
     <script src="https://ammubhai22-github-io.pages.dev/msx/test/hls.js"></script>
 </head>
 <body>
@@ -23,17 +23,58 @@
         hls.loadSource(videoSrc);
         hls.attachMedia(video);
 
+        video.addEventListener('timeupdate', function() {
+            // Store the current playback position in local storage
+            localStorage.setItem('lastPlaybackPosition', video.currentTime.toFixed(2));
+        });
+
         setInterval(function () {
-            // Clear old segments and reload playlist
-            hls.startLevel = 0;
-            hls.loadSource(videoSrc);
-            hls.attachMedia(video);
-        }, 30000);  // Refresh every 30 seconds (adjust as needed)
+            // Check if there's a stored playback position and set it
+            var storedPosition = localStorage.getItem('lastPlaybackPosition');
+            if (storedPosition) {
+                video.currentTime = parseFloat(storedPosition);
+            }
+
+            // Log the refresh time in the console
+            console.log('Refreshed at:', video.currentTime.toFixed(2));
+
+            // Reload the source
+            hls.startLoad();
+
+            // Play the video
+            video.play();
+        }, 10000);
+
+        // Play/pause, rewind, and navigation event listeners
+        document.addEventListener('keydown', function (event) {
+            switch (event.keyCode) {
+                case 19: // Play/pause (Pause/Break key)
+                case 13: // Play/pause (Enter key)
+                case 415: // Play/pause (Media Play key)
+                    video.paused ? video.play() : video.pause();
+                    break;
+                case 39: // Rewind 5 sec forward (Right Arrow key)
+                case 417: // Rewind 5 sec forward (Media Fast Forward key)
+                    video.currentTime += 5;
+                    break;
+                case 37: // Rewind 5 sec backward (Left Arrow key)
+                case 412: // Rewind 5 sec backward (Media Rewind key)
+                    video.currentTime -= 5;
+                    break;
+                case 413: // Back to previous site (Media Stop key)
+                    // Add your logic for navigating back to the previous site
+                    break;
+                default:
+                    break;
+            }
+        });
+
+        video.play();
+
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
         video.src = videoSrc;
+        video.play();
     }
-
-    video.play();
 </script>
 
 </body>
