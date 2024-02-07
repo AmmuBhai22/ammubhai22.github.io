@@ -5,100 +5,219 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resumable HLS.js Video Player</title>
     <script src="https://ammubhai22-github-io.pages.dev/msx/test/hls.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <style>
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #videoContainer {
+            position: relative;
+            width: 100%;
+            height: 100%;
         }
 
         #videoPlayer {
             width: 100%;
+            height: calc(100% - 50px); /* Adjust height to accommodate controls */
+        }
+
+        #customControls {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: none; /* Initially hide custom controls */
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px;
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+        }
+
+        .controlButton {
+            cursor: pointer;
+            margin: 0 5px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            font-size: 18px;
+        }
+
+        .progressBarContainer {
+            width: 100%;
+            height: 5px;
+            background-color: #ccc;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .progressBar {
             height: 100%;
+            background-color: #0f0; /* Adjust color as needed */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .progressBar:focus {
+            outline: none;
         }
     </style>
 </head>
 <body>
 
-<video id="videoPlayer" autoplay>
-    Your browser does not support the video tag.
-</video>
+<div id="videoContainer">
+    <video id="videoPlayer" autoplay controls>
+        Your browser does not support the video tag.
+    </video>
+    
+    <div id="customControls">
+        <div id="playPauseButton" class="controlButton material-icons" tabindex="0">play_arrow</div>
+        <div id="rewindButton" class="controlButton material-icons" tabindex="0">fast_rewind</div>
+        <div id="forwardButton" class="controlButton material-icons" tabindex="0">fast_forward</div>
+    </div>
+
+    <div class="progressBarContainer" tabindex="0">
+        <div class="progressBar"></div>
+    </div>
+</div>
 
 <script>
-    var video = document.getElementById('videoPlayer');
-    var hls = new Hls();
+if (!isControlsVisible) {
+            isControlsVisible = true;
+            document.getElementById('customControls').style.display = 'flex';
+            document.querySelector('.progressBarContainer').style.display = 'block';
+            setTimeout(function () {
+                document.getElementById('customControls').style.display = 'none';
+                document.querySelector('.progressBarContainer').style.display = 'none';
+                isControlsVisible = false;
+            }, 5000);
+        }
+        
+  var video = document.getElementById('videoPlayer');
+var hls = new Hls();
+var playPauseButton = document.getElementById('playPauseButton');
+var rewindButton = document.getElementById('rewindButton');
+var forwardButton = document.getElementById('forwardButton');
+var progressBarContainer = document.querySelector('.progressBarContainer');
+var progressBar = document.querySelector('.progressBar');
+var isProgressBarFocused = false;
+var isControlsVisible = false;
+var videoDiv=document.getElementById("videoContainer");
 
-    // Replace 'your_file.m3u8' with the actual path or URL of your HLS stream
-    var videoSrc = 'http://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8';
-
-    if (Hls.isSupported()) {
-        hls.loadSource(videoSrc);
-        hls.attachMedia(video);
-
-        video.addEventListener('timeupdate', function() {
-            // Store the current playback position in local storage
-            localStorage.setItem('lastPlaybackPosition', video.currentTime.toFixed(2));
+// Replace 'your_file.m3u8' with the actual path or URL of your HLS stream
+var videoSrc = 'http://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8';
+videoDiv.addEventListener("click", function () {
+            isControlsVisible = true;
+            document.getElementById('customControls').style.display = 'flex';
+            document.querySelector('.progressBarContainer').style.display = 'block';
+            setTimeout(function () {
+                document.getElementById('customControls').style.display = 'none';
+                document.querySelector('.progressBarContainer').style.display = 'none';
+                isControlsVisible = false;
+            }, 5000);
         });
+if (Hls.isSupported()) {
+    hls.loadSource(videoSrc);
+    hls.attachMedia(video);
+    isControlVisible=true;
+    video.controls = false; // Disable default controls
 
-        setInterval(function () {
-            // Check if there's a stored playback position and set it
-            var storedPosition = localStorage.getItem('lastPlaybackPosition');
-            if (storedPosition) {
-                video.currentTime = parseFloat(storedPosition);
-            }
+    video.addEventListener('timeupdate', function() {
+        // Store the current playback position in local storage
+        localStorage.setItem('lastPlaybackPosition', video.currentTime.toFixed(2));
 
-            // Log the refresh time in the console
-            console.log('Refreshed at:', video.currentTime.toFixed(2));
+        // Update the progress bar if it's not focused
+        if (!isProgressBarFocused) {
+            var progress = (video.currentTime / video.duration) * 100;
+            progressBar.style.width = progress + '%';
+        }
+    });
 
-            // Reload the source
-            hls.startLoad();
+    setInterval(function () {
+        var storedPosition = localStorage.getItem('lastPlaybackPosition');
+        if (storedPosition) {
+            video.currentTime = parseFloat(storedPosition);
+        }
 
-            // Play the video
-            video.play();
-        }, 8000);
+        console.log('Refreshed at:', video.currentTime.toFixed(2));
 
-        // Play/pause, rewind, and navigation event listeners
-        document.addEventListener('keydown', function (event) {
-            switch (event.keyCode) {
-                case 19: // Play/pause (Pause/Break key)
-                case 13: // Play/pause (Enter key)
-                case 415: // Play/pause (Media Play key)
-                    video.paused ? video.play() : video.pause();
-                    break;
-                case 39: // Rewind 5 sec forward (Right Arrow key)
-                case 417: // Rewind 5 sec forward (Media Fast Forward key)
-                    video.currentTime += 5;
-                    video.controls = true; // Show controls when rewinding
-                    break;
-                case 37: // Rewind 5 sec backward (Left Arrow key)
-                case 412: // Rewind 5 sec backward (Media Rewind key)
-                    video.currentTime -= 5;
-                    video.controls = true; // Show controls when rewinding
-                    break;
-                case 413: // Back to previous site (Media Stop key)
-                    window.history.back();
-                    break;
-                default:
-                    break;
-            }
-        });
-
-        // Listen to the playing event to hide controls dynamically
-        video.addEventListener('playing', function () {
-            video.controls = false;
-        });
-
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = videoSrc;
+        hls.startLoad();
         video.play();
+        isControlsVisible=false;
 
-        // Listen to the playing event to hide controls dynamically
-        video.addEventListener('playing', function () {
-            video.controls = false;
-        });
-    }
+        // Show custom controls for 5 seconds at the start
+        
+    }, 8000);
+
+    playPauseButton.addEventListener('click', function () {
+        if (video.paused) {
+            video.play();
+            playPauseButton.textContent = 'pause';
+        } else {
+            video.pause();
+            playPauseButton.textContent = 'play_arrow';
+        }
+    });
+
+    rewindButton.addEventListener('click', function () {
+        video.currentTime -= 5;
+    });
+
+    forwardButton.addEventListener('click', function () {
+        video.currentTime += 5;
+    });
+
+    progressBarContainer.addEventListener('keydown', function (e) {
+        // Check if the key pressed is the left or right arrow
+        if (e.keyCode === 37) { // Left arrow key
+            video.currentTime -= 5;
+        } else if (e.keyCode === 39) { // Right arrow key
+            video.currentTime += 5;
+        }
+    });
+
+    progressBarContainer.addEventListener('click', function (e) {
+        if (isProgressBarFocused) {
+            var progressBarWidth = progressBarContainer.offsetWidth;
+            var clickX = e.pageX - progressBarContainer.offsetLeft;
+            var seekTime = (clickX / progressBarWidth) * video.duration;
+            video.currentTime = seekTime;
+        }
+    });
+
+    progressBarContainer.addEventListener('focus', function () {
+        isProgressBarFocused = true;
+    });
+
+    progressBarContainer.addEventListener('blur', function () {
+        isProgressBarFocused = false;
+    });
+
+    video.addEventListener('playing', function () {
+        document.querySelector('.progressBarContainer').focus();
+    });
+
+} else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = videoSrc;
+    video.play();
+
+    video.addEventListener('playing', function () {
+        video.controls = false;
+    });
+}
 </script>
-
 </body>
 </html>
