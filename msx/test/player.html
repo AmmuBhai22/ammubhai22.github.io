@@ -7,6 +7,9 @@
     <script src="https://ammubhai22-github-io.pages.dev/msx/test/hls.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <style>
+    #playPauseButton{
+      margin:0 auto;
+    }
         body, html {
             margin: 0;
             padding: 0;
@@ -34,7 +37,7 @@
             bottom: 0;
             width: 100%;
             display: none; /* Initially hide custom controls */
-            justify-content: space-between;
+            
             align-items: center;
             padding: 5px 10px;
             box-sizing: border-box;
@@ -44,7 +47,7 @@
 
         .controlButton {
             cursor: pointer;
-            margin: 0 5px;
+            margin: 2px;
             width: 30px;
             height: 30px;
             display: flex;
@@ -84,9 +87,11 @@
     </video>
     
     <div id="customControls">
+      <div id="rewindButton" class="controlButton material-icons" tabindex="0">fast_rewind</div>
         <div id="playPauseButton" class="controlButton material-icons" tabindex="0">play_arrow</div>
-        <div id="rewindButton" class="controlButton material-icons" tabindex="0">fast_rewind</div>
         <div id="forwardButton" class="controlButton material-icons" tabindex="0">fast_forward</div>
+        <div id="exitButton" class="controlButton material-icons" tabindex="0">stop</div>
+        
     </div>
 
     <div class="progressBarContainer" tabindex="0">
@@ -115,7 +120,8 @@ var progressBarContainer = document.querySelector('.progressBarContainer');
 var progressBar = document.querySelector('.progressBar');
 var isProgressBarFocused = false;
 var isControlsVisible = false;
-var videoDiv=document.getElementById("videoContainer");
+var videoDiv=document.querySelector("#videoContainer");
+var exitButton=document.querySelector(".exitButton");
 
 // Replace 'your_file.m3u8' with the actual path or URL of your HLS stream
 var videoSrc = 'http://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8';
@@ -171,7 +177,9 @@ if (Hls.isSupported()) {
             playPauseButton.textContent = 'play_arrow';
         }
     });
-
+    exitButton.addEventListener('click',function () {
+      history.back();
+    });
     rewindButton.addEventListener('click', function () {
         video.currentTime -= 5;
     });
