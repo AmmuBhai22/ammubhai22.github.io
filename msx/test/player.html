@@ -125,6 +125,19 @@ var exitButton=document.querySelector(".exitButton");
 
 // Replace 'your_file.m3u8' with the actual path or URL of your HLS stream
 var videoSrc = 'http://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8';
+
+exitButton.addEventListener('focus', function (){
+  isControlsVisible=true;
+});
+forwardButton.addEventListener('focus', function (){
+  isControlsVisible=true;
+});
+rewindButton.addEventListener('focus', function (){
+  isControlsVisible=true;
+});
+playPauseButton.addEventListener('focus', function (){
+  isControlsVisible=true;
+});
 videoDiv.addEventListener("click", function () {
             isControlsVisible = true;
             document.getElementById('customControls').style.display = 'flex';
@@ -177,6 +190,7 @@ if (Hls.isSupported()) {
             playPauseButton.textContent = 'play_arrow';
         }
     });
+    
     exitButton.addEventListener('click',function () {
       history.back();
     });
@@ -208,6 +222,7 @@ if (Hls.isSupported()) {
 
     progressBarContainer.addEventListener('focus', function () {
         isProgressBarFocused = true;
+        isControlsVisible=true;
     });
 
     progressBarContainer.addEventListener('blur', function () {
