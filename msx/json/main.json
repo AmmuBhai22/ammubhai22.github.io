@@ -19,6 +19,11 @@
             "action": "menu:http://phpkrotest.000webhostapp.com/msx/Nmenu.json"
          },
          {
+            "action":"content:http://192.168.2.3:5000/list/15016",
+            "label":"Hotstar"
+         },
+            
+         {
            "label":"TEST NEW MAIN",
            "action":"link:window:https://ammubhai22-github-io.pages.dev/msx/test/testMainPg"
          }
