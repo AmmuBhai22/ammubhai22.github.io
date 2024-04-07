@@ -46,7 +46,7 @@
             },
             {
                "type": "seperate",
-               "layout": "8,2,3,4",
+               "layout": "12,2,3,4",
                "title": "DesiCinemas{br}Server 4",
                "key":"4",
                "image": "https://ammubhai22-github-io.pages.dev/msx/images/S4.jpg",
