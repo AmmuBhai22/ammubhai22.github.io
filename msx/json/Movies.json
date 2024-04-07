@@ -20,7 +20,7 @@
             },
                         {
                "type": "seperate",
-               "layout": "4,2,3,4",
+               "layout": "3,2,3,4",
                "title": "MovieLand{br}Server 2",
                "key":"2",
                "image": "https://ammubhai22-github-io.pages.dev/msx/images/S2.jpg",
@@ -33,7 +33,7 @@
             } ,
             {
                "type": "seperate",
-               "layout": "8,2,3,4",
+               "layout": "6,2,3,4",
                "title": "PlayDesi{br}Server 3",
                "key":"3",
                "image": "https://ammubhai22-github-io.pages.dev/msx/images/S3.jpg",
@@ -46,7 +46,7 @@
             },
             {
                "type": "seperate",
-               "layout": "12,2,3,4",
+               "layout": "9,2,3,4",
                "title": "DesiCinemas{br}Server 4",
                "key":"4",
                "image": "https://ammubhai22-github-io.pages.dev/msx/images/S4.jpg",
