@@ -62,9 +62,9 @@
             {
                "type": "seperate",
                "layout": "6,2,3,4",
-               "title": "Movies",
+               "title": "OTT",
                "key": "3",
-               "image": "https://ammubhai22-github-io.pages.dev/msx/images/Movies2.jpg",
+               "image": "https://ammubhai22-github-io.pages.dev/msx/images/ott.jpg",
                "color": "msx-black",
                "alignment": "title-center",
                "imageFiller": "cover",
