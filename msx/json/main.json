@@ -81,7 +81,7 @@
                "alignment": "title-center",
                "imageFiller": "cover",
                "imageOverlay": 0,
-               "action": "content:http://ammubhai.000webhostapp.com/YT/msx.php"
+               "action": "content:https://amantest.serv00.net/YT/msx.php"
             },
             {
                "type": "teaser",
