@@ -81,7 +81,7 @@
                "alignment": "title-center",
                "imageFiller": "cover",
                "imageOverlay": 0,
-               "action": "content:https://amantest.serv00.net/YT/msx.php"
+               "action": "content:http://amantest.serv00.net/YT/msx.php"
             },
             {
                "type": "teaser",
