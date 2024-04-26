@@ -90,7 +90,7 @@
                "key": "6",
                "color": "msx-black",
                "alignment": "title-center",
-               "action": "link:window:https://web.strem.io/"
+               "action": "link:https://web.strem.io/"
             },
             {
                "type": "teaser",
