@@ -86,11 +86,11 @@
             {
                "type": "teaser",
                "layout": "9,1,3,1",
-               "title": "JioTv",
+               "title": "StremIO",
                "key": "6",
                "color": "msx-black",
                "alignment": "title-center",
-               "action": "content:https://ammubhai22-github-io.pages.dev/msx/json/JTV.json"
+               "action": "link:http://tv.strem.io/"
             },
             {
                "type": "teaser",
