@@ -15,7 +15,7 @@
           "imageOverlay": 0,
           "alignment": "title-center",
           "action":
-          "content:http://search.ammubhai99.serv00.net/msx?headline=Dailymotion%20search&url=http://Dailymotion.amantest.serv00.net/search&bg=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN0XPtGXDLoqnu-6lyb1AQHhAqdm_2fkb6Ew&usqp=CAU"
+          "content:http://search.ammubhai99.serv00.net/msx?headline=Dailymotion%20search&url=http://Dailymotion.amantest.serv00.net/search&bg=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN0XPtGXDLoqnu-6lyb1AQHhAqdm_2fkb6Ew&usqp=CAU&param=q"
         }
       ]
     }
