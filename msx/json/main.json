@@ -101,7 +101,7 @@
                "color": "msx-black",
                "alignment": "title-center",
                "action":
-               "https://ammubhai22-github-io.pages.dev/msx/json/DailyMotion.json"
+               "content:https://ammubhai22-github-io.pages.dev/msx/json/DailyMotion.json"
             }
          ]
       }
