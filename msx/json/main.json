@@ -86,12 +86,12 @@
             {
                "type": "teaser",
                "layout": "9,1,3,1",
-               "title": "StremIO",
+               "title": "Dailymotion Local",
                "key": "6",
                "color": "msx-black",
                "alignment": "title-center",
                "action":
-               "video:plugin:http://msx.benzac.de/plugins/hls.html?url=http://amantest.serv00.net/YT/You/m3u8/Z2uCmS3qgpo"
+               "content:http://search.ammubhai99.serv00.net/msx?headline=Dailymotion%20search&url=http://192.168.2.3:5000/search&bg=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN0XPtGXDLoqnu-6lyb1AQHhAqdm_2fkb6Ew&usqp=CAU&param=q"
             },
             {
                "type": "teaser",
