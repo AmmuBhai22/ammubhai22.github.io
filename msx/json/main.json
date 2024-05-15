@@ -96,12 +96,12 @@
             {
                "type": "teaser",
                "layout": "6,1,3,1",
-               "title": "DailyMotion",
+               "title": "QR",
                "key": "5",
                "color": "msx-black",
                "alignment": "title-center",
                "action":
-               "content:https://ammubhai22-github-io.pages.dev/msx/json/DailyMotion.json"
+               "content:http://qrmsx.ammubhai.serv00.net/json"
             }
          ]
       }
