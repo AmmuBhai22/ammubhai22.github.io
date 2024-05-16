@@ -81,7 +81,7 @@
                "alignment": "title-center",
                "imageFiller": "cover",
                "imageOverlay": 0,
-               "action": "contenthttps://ammubhai22-github-io.pages.dev/msx/json/DailyMotion.json:"
+               "action": "content:https://ammubhai22-github-io.pages.dev/msx/json/DailyMotion.json:"
             },
             {
                "type": "teaser",
@@ -91,7 +91,7 @@
                "color": "msx-black",
                "alignment": "title-center",
                "action":
-               "content:http://archive.ammubhai22.serv00.net/"
+               "video:https://archive.org/download/MBSP2013/Mahabharat.e002.2013.WEB-DL.1080p.mp4"
             },
             {
                "type": "teaser",
@@ -102,15 +102,6 @@
                "alignment": "title-center",
                "action":
                "content:http://qrmsx.ammubhai.serv00.net/json"
-            },
-            {
-               "type": "teaser",
-               "layout": "3,1,3,1",
-               "title": "Test",
-               "key": "",
-               "color": "msx-black",
-               "alignment": "title-center",
-               "action":"video:https://dn720200.ca.archive.org/0/items/MBSP2013/Mahabharat.e041.2013.WEB-DL.1080p.mp4"
             }
          ]
       }
