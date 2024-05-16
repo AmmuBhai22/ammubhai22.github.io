@@ -91,7 +91,7 @@
                "color": "msx-black",
                "alignment": "title-center",
                "action":
-               "video:https://archive.org/download/MBSP2013/Mahabharat.e002.2013.WEB-DL.1080p.mp4"
+               "content:http://archive.ammubhai22.serv00.net/"
             },
             {
                "type": "teaser",
