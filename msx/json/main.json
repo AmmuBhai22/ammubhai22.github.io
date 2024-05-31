@@ -76,28 +76,28 @@
                "layout": "9,2,3,4",
                "title": "",
                "key": "4",
-               "image": "https://ammubhai22-github-io.pages.dev/msx/images/Dailymotion.png",
+               "image": "https://ammubhai22-github-io.pages.dev/msx/images/Yt.png",
                "color": "msx-black",
                "alignment": "title-center",
                "imageFiller": "cover",
                "imageOverlay": 0,
-               "action": "content:https://ammubhai22-github-io.pages.dev/msx/json/DailyMotion.json"
+               "action": "contenthttps://ammubhai22-github-io.pages.dev/msx/json/DailyMotion.json:"
             },
             {
                "type": "teaser",
                "layout": "9,1,3,1",
                "title": "Archive Test",
-               "key": "5",
+               "key": "6",
                "color": "msx-black",
                "alignment": "title-center",
                "action":
-               "video:https://archive.org/download/MBSP2013/Mahabharat.e002.2013.WEB-DL.1080p.mp4"
+               "content:http://archive.ammubhai22.serv00.net/"
             },
             {
                "type": "teaser",
                "layout": "6,1,3,1",
                "title": "QR",
-               "key": "6",
+               "key": "5",
                "color": "msx-black",
                "alignment": "title-center",
                "action":
@@ -106,12 +106,20 @@
             {
                "type": "teaser",
                "layout": "3,1,3,1",
-               "title": "JioTv",
-               "key": "7",
+               "title": "Test",
+               "key": "",
                "color": "msx-black",
                "alignment": "title-center",
-               "action":
-               "content:http://jio.ammubhaipy.serv00.net/mainJson"
+               "action":"video:https://dn720200.ca.archive.org/0/items/MBSP2013/Mahabharat.e041.2013.WEB-DL.1080p.mp4"
+            },
+            {
+               "type": "teaser",
+               "layout": "0,1,3,1",
+               "title": "WebVideoCaster",
+               "key": "",
+               "color": "msx-black",
+               "alignment": "title-center",
+               "action":"link:http://vewd.webvideocaster.com/"
             }
          ]
       }
