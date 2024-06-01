@@ -112,8 +112,8 @@
                "alignment": "title-center",
                "action":
                "content:http://jio.ammubhaipy.serv00.net/mainJson"
-            }
-         ]
+            },
+         
             {
                "type": "teaser",
                "layout": "0,1,3,1",
