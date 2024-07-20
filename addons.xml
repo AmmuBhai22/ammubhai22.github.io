@@ -1,0 +1,11 @@
+<addons>
+    <addon id="plugin.video.yodesi" name="Yodesi Addon" version="1.0.0" provider-name="AmmuBhai22">
+        <summary>Just a try</summary>
+        <description>Yodesi</description>
+        
+      
+        <license>GPL-3.0</license>
+        <source url="https://example.com/addon.zip"/>
+    </addon>
+  
+</addons>
